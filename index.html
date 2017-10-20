@@ -20,17 +20,51 @@
 
 <!-- Header -->
 <header class="w3-container w3-theme w3-padding" id="myHeader">
-  <i onclick="w3_open()" class="fa fa-bars w3-xlarge w3-button w3-theme"></i> 
-  <div class="w3-center">
-  <h4>SLEEP ANALYSIS</h4>
-  <h1 class="w3-xxxlarge w3-animate-bottom">Introducing the App that alerts care givers if their care recipient is out of bed.</h1>
+  <div class="w3-center"><h4>&nbsp;</h4>
+  <h1 class="w3-xxxlarge w3-animate-bottom">An App for Caregivers Who Care</h1>
     <div class="w3-padding-32">
-      <button class="w3-btn w3-xlarge w3-dark-grey w3-hover-light-grey" onclick="document.getElementById('id01').style.display='block'" style="font-weight:900;">LEARN W3.CSS</button>
+      <button class="w3-btn w3-xlarge w3-dark-grey w3-hover-light-grey" onclick="document.getElementById('id01').style.display='block'" style="font-weight:900;">Contact Us </button>
     </div>
-  </div>
+</div>
 </header>
 
 <!-- Modal -->
+
+<div class="w3-padding w3-white w3-display-container">
+  <span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-topright"><i class="fa fa-remove"></i></span>
+  <h2>Overview</h2>
+  <p>For caregivers, knowing if thier care recipient is safely in bed can be a challenge. Having an alert system in place if the patient gets out of bed could save someone from falling, wondering, or harming themselfs. Using an fisher linear discrimination, we used machine learning to create an algoritum for determining if a person is walking or resting. A patient wears thier celluar device while they sleep and a caregiver recieves an alert if the person starts walking. </p>
+</div>
+
+<div class="w3-padding w3-white w3-display-container">
+  <span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-topright"><i class="fa fa-remove"></i></span>
+  <h2>User Group</h2>
+  <p>For caregivers.... our tehnology accounts for tossing and turning...</p>
+</div>
+
+<div class="w3-padding w3-white w3-display-container">
+  <span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-topright"><i class="fa fa-remove"></i></span>
+  <h2>Motion Detection</h2>
+  <p>TALK ABOUT THE MOVEMENTS SHOWS IN THE GRAPH and DYNMAICS..</p>
+</div>
+
+
+<div class="w3-padding w3-white w3-display-container">
+  <span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-topright"><i class="fa fa-remove"></i></span>
+  <h2>Our Technology</h2>
+  <p> The essence of our technology is to match input accelermeter data from the sensor the patient is wearing to a trained set of data. We can tell if someone is walking or not if the input data matches the tained walking data or the resting data.</p>
+  
+  <p> For all the data, trained and inputed, we used several mechanisms for cleaning the signal. We first put the data through a strict low pass filter and a loose high pass filter. The filtering got ride of outliers and normalized our data to be more simular.</p> 
+  
+  <p>After filtering, we took the time component out of our data by putting it into the frequency domain. This is possible with the Fast Fourier Transform (FFT). The first image shows an example reading in the time domain. The second image shows the same reading in the frequency domain.</p>
+  
+  <p> We made a trained set of data using fisher linear discrimination. This included INSERT ABOUT EIGENS AND SUCH. </p>
+  
+  <p> With a set of trained data we were able to </p>
+  
+  
+</div>
+
 <div id="id01" class="w3-modal">
     <div class="w3-modal-content w3-card-4 w3-animate-top">
       <header class="w3-container w3-theme-l1"> 
@@ -159,15 +193,6 @@
   <h2>Header</h2>
 </header>
 
-<div class="w3-padding w3-white w3-display-container">
-  <span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-topright"><i class="fa fa-remove"></i></span>
-  <h2>London</h2>
-  <p>London is the capital city of England. It is the most populous city in the United Kingdom,
-  with a metropolitan area of over 13 million inhabitants.</p>
-  <p>Standing on the River Thames, London has been a major settlement for two millennia,
-  its history going back to its founding by the Romans, who named it Londinium.</p>
-  <p>By the way, you can add a close icon to all containers if you want the ability to hide them. Look to your right!</p>
-</div>
 
 <footer class="w3-container w3-blue-grey">
   <h5>Footer</h5>
