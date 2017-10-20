@@ -1,9 +1,6 @@
-## Welcome to GitHub Pages
+## Sleep Analysis
 
-You can use the [editor on GitHub](https://github.com/allisonlynnbasore14/SleepAnalysis/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
+We built a proof of concept version of an app that alterts caregivers if their carerecivers get up during the night.
 ### Markdown
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
