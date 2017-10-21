@@ -33,7 +33,7 @@
 <div class="w3-padding w3-white w3-display-container">
   <span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-topright"><i class="fa fa-remove"></i></span>
   <h2>Overview</h2>
-  <p>For caregivers, knowing if thier care recipient is safely in bed can be a challenge. Having an alert system in place if the patient gets out of bed could save someone from falling, wondering, or harming themselfs. Using an fisher linear discrimination, we used machine learning to create an algoritum for determining if a person is walking or resting. A patient wears thier celluar device while they sleep and a caregiver recieves an alert if the person starts walking. </p>
+  <p>For caregivers, knowing if their care recipient is safely in bed can be a challenge. Having an alert system in place if the patient gets out of bed could save someone from falling, wondering, or harming themselves. Using an fisher linear discrimination, we used machine learning to create an algorithm for determining if a person is walking or resting. A patient wears their cellular device while they sleep and a caregiver receives an alert if the person starts walking. </p>
 </div>
 
 <div class="w3-padding w3-white w3-display-container">
@@ -53,19 +53,14 @@
 <div class="w3-padding w3-white w3-display-container">
   <span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-topright"><i class="fa fa-remove"></i></span>
   <h2>Our Technology</h2>
-  <p> The essence of our technology is to match input accelermeter data from the sensor the patient is wearing to a trained set of data. We can tell if someone is walking or not if the input data matches the tained walking data or the resting data.</p>
+  <p> The essence of our technology is to match input accelerometer data from the sensor the patient is wearing to a trained set of data. We can tell if someone is walking or not if the input data matches the trained walking data or the resting data.</p>
   
-  <p> For all the data, trained and inputed, we used several mechanisms for cleaning the signal. We first put the data through a strict low pass filter and a loose high pass filter. The filtering got ride of outliers and normalized our data to be more simular.</p> 
+  <p> For all the data, trained and imputed, we used several mechanisms for cleaning the signal. We first put the data through a strict low pass filter and a loose high pass filter. The filtering got ride of outliers and normalized our data to be more similar.</p> 
   
   <p>After filtering, we took the time component out of our data by putting it into the frequency domain. This is possible with the Fast Fourier Transform (FFT). The first image shows an example reading in the time domain. The second image shows the same reading in the frequency domain.</p>
+
   
-  
-  
-  <p> We made a trained set of data using fisher linear discrimination. This included INSERT ABOUT EIGENS AND SUCH. </p>
-  
-  <p> With a set of trained data we were able to </p>
-  
-  
+ 
 </div>
 
 <div id="id01" class="w3-modal">
@@ -88,43 +83,37 @@
 
 <div class="w3-row-padding w3-center w3-margin-top">
 <div class="w3-third">
-  <div class="w3-card-2 w3-container" style="min-height:460px"><br>
+  <div class="w3-card-2 w3-container" style="min-width:300px"><br>
   <img src="/SleepAnalysis/timeDomExample.jpg?raw=true" alt="Example data in time domain">
   <p>Example Data Set in the Time Domain</p>
   </div>
 </div>
-  
+  <br>
+
   <div class="w3-row-padding w3-center w3-margin-top">
 <div class="w3-third">
-  <div class="w3-card-2 w3-container" style="min-height:460px"><br>
+  <div class="w3-card-2 w3-container" style="min-width:300px"><br>
   <img src="/SleepAnalysis/freqDomExample.jpg?raw=true" alt="Example data in frequency domain">
   <p>Example Data Set in the Frequency Domain</p>
   </div>
 </div>
 
-<div class="w3-third">
-  <div class="w3-card-2 w3-container" style="min-height:460px">
-  <h3>Standard CSS</h3><br>
-  <i class="fa fa-css3 w3-margin-bottom w3-text-theme" style="font-size:120px"></i>
-  <p>Standard CSS only</p>
-  <p>Easy to learn</p>
-  <p>No need for jQuery</p>
-  <p>No JavaScript library</p>
-  </div>
 </div>
 
-<div class="w3-third">
-  <div class="w3-card-2 w3-container" style="min-height:460px">
-  <h3>Design</h3><br>
-  <i class="fa fa-diamond w3-margin-bottom w3-text-theme" style="font-size:120px"></i>
-  <p>Paper like design</p>
-  <p>Bold colors and shadows</p>
-  <p>Equal across platforms</p>
-  <p>Equal across devices</p>
-  </div>
-</div>
-</div>
+<div class="w3-padding w3-white w3-display-container">
+  <span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-topright"><i class="fa fa-remove"></i></span>
+  <p> We made a trained set of data using fisher linear discrimination. This included INSERT ABOUT EIGENS AND SUCH. </p>
+  
+  <p> With a set of trained data we were able to input data from a user's phone and find which of our training data sets most correrlates to the input. </p>
+  
+  <div class="w3-padding w3-white w3-display-container">
+  <span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-topright"><i class="fa fa-remove"></i></span>
+  <h2>Our Data</h2>
+  <p>Our training data came from 12 tests. Six of the tests were purely walking. The other six were laying down with light tossing and turning to simulate sleeping movements. Taking data consisted of attaching a phone with an accelerometer to our upper leg. We chose the upper leg as the measurement point to optimize stillness while sleeping and maximize movement while walking. The arms or lower legs are more commonly moved during sleep. Additionally the comfort of the user needed to be considered with the position of the sensor. The upper leg was relatively unobtrusive compared the neck which would be tremendously uncomfortable.</p>
 
+</div>
+  
+</div>
 <div class="w3-container">
 <hr>
 <div class="w3-center">
@@ -194,6 +183,7 @@
 <div class="w3-center">
   <h2>Containers</h2>
   <p>Use containers to create headers, sections and footers.</p>
+
 </div>   
 
 <header class="w3-container w3-blue-grey">
@@ -548,11 +538,11 @@
   <h3>Footer</h3>
   <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
   <div style="position:relative;bottom:55px;" class="w3-tooltip w3-right">
-    <span class="w3-text w3-theme-light w3-padding">Go To Top</span>    
+    <span class="w3-text w3-theme-light w3-padding">Go To Top</span>    
     <a class="w3-text-white" href="#myHeader"><span class="w3-xlarge">
     <i class="fa fa-chevron-circle-up"></i></span></a>
   </div>
-  <p>Remember to check out our  <a href="w3css_references.asp" class="w3-btn w3-theme-light" target="_blank">W3.CSS Reference</a></p>
+  <p>Remember to check out our  <a href="w3css_references.asp" class="w3-btn w3-theme-light" target="_blank">W3.CSS Reference</a></p>
 </footer>
 
 <!-- Script for Sidebar, Tabs, Accordions, Progress bars and slideshows -->
@@ -568,7 +558,6 @@ function w3_open() {
 function w3_close() {
     document.getElementById("mySidebar").style.display = "none";
 }
-
 // Tabs
 function openCity(evt, cityName) {
   var i;
@@ -583,10 +572,8 @@ function openCity(evt, cityName) {
   document.getElementById(cityName).style.display = "block";
   evt.currentTarget.className += " w3-dark-grey";
 }
-
 var mybtn = document.getElementsByClassName("testbtn")[0];
 mybtn.click();
-
 // Accordions
 function myAccFunc(id) {
     var x = document.getElementById(id);
@@ -596,15 +583,12 @@ function myAccFunc(id) {
         x.className = x.className.replace(" w3-show", "");
     }
 }
-
 // Slideshows
 var slideIndex = 1;
-
 function plusDivs(n) {
 slideIndex = slideIndex + n;
 showDivs(slideIndex);
 }
-
 function showDivs(n) {
   var x = document.getElementsByClassName("mySlides");
   if (n > x.length) {slideIndex = 1}    
@@ -614,9 +598,7 @@ function showDivs(n) {
   }
   x[slideIndex-1].style.display = "block";  
 }
-
 showDivs(1);
-
 // Progress Bars
 function move() {
   var elem = document.getElementById("myBar");   
