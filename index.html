@@ -44,14 +44,6 @@
 
 <div class="w3-padding w3-white w3-display-container">
   <span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-topright"><i class="fa fa-remove"></i></span>
-  <h2>Motion Detection</h2>
-  <p>TALK ABOUT THE MOVEMENTS SHOWS IN THE GRAPH and DYNMAICS..</p>
-
-</div>
-
-
-<div class="w3-padding w3-white w3-display-container">
-  <span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-topright"><i class="fa fa-remove"></i></span>
   <h2>Our Technology</h2>
   <p> The essence of our technology is to match input accelerometer data from the sensor the patient is wearing to a trained set of data. We can tell if someone is walking or not if the input data matches the trained walking data or the resting data.</p>
   
@@ -88,6 +80,7 @@
   <p>Example Data Set in the Time Domain</p>
   </div>
 </div>
+  <br>
 
   <div class="w3-row-padding w3-center w3-margin-top"  style="display:inline-table">
 <div class="w3-third">
@@ -99,7 +92,6 @@
 
 </div>
 
-  
 <div class="w3-padding w3-white w3-display-container">
   <span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-topright"><i class="fa fa-remove"></i></span>
   <p> We made a trained set of data using fisher linear discrimination. This included INSERT ABOUT EIGENS AND SUCH. </p>
@@ -110,24 +102,42 @@
   <span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-topright"><i class="fa fa-remove"></i></span>
   <h2>Our Data</h2>
   <p>Our training data came from 12 tests. Six of the tests were purely walking. The other six were laying down with light tossing and turning to simulate sleeping movements. Taking data consisted of attaching a phone with an accelerometer to our upper leg. We chose the upper leg as the measurement point to optimize stillness while sleeping and maximize movement while walking. The arms or lower legs are more commonly moved during sleep. Additionally the comfort of the user needed to be considered with the position of the sensor. The upper leg was relatively unobtrusive compared the neck which would be tremendously uncomfortable.</p>
+  
+  
 
 </div>
   
 </div>
-<div class="w3-container">
-<hr>
-<div class="w3-center">
-  <h2>Color Classes</h2>
+
+<div class="w3-padding w3-white w3-display-container">
+  <span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-topright"><i class="fa fa-remove"></i></span>
+  <h2>Motion Detection</h2>
+  <p>
+Accelerometer data allows us to track the acceleration of a user in the x, y, and z axis. Using a series of these vectors, we can determine the motion of the user (Ex: moves forward then turns left). Additional information about the user original relation to a set room point allows us to determine a path made the user in the room frame. The following image is example accelerometer data in the y axes (top to bottom) taken using a phone. The graph shows that the acceleration is based around 9.8, which makes sense with gravity. As the user’s leg moves up and down from walking, acceleration spikes and plummets when the leg comes to a stop with each step.  
+
+
+The second graph here shows user acceleration in the y axis while the person is resting and only slightly tossing and turning. Here the phone’s y axis is laying horizontally across the person’s leg so the data is centered at about 0. Toward the beginning the data drops to be around -1. This is due to the user slightly lifting their leg to not be horizontal. At the end, the user is truing their leg side to side and upwards slightly.
+</p>
+
+<div>
+	<img src="/SleepAnalysis/phonecord.png?raw=true" alt="Example data in frequency domain" style="width:450px">
 </div>
 
-<div class="w3-row">
-  <div class="w3-col w3-container m2 w3-red"><p>Red</p></div>
-  <div class="w3-col w3-container m2 w3-blue"><p>Blue</p></div>
-  <div class="w3-col w3-container m2 w3-blue-grey"><p>Blue Grey</p></div>
-  <div class="w3-col w3-container m2 w3-teal"><p>Teal</p></div>
-  <div class="w3-col w3-container m2 w3-yellow"><p>Yellow</p></div>
-  <div class="w3-col w3-container m2 w3-orange"><p>Orange</p></div>
 </div>
+
+<div style="display:inline-table">
+	<div>
+     <img src="/SleepAnalysis/TimeReadinginY.jpg?raw=true" alt="Example data in frequency domain" style="width:450px">
+      <p>Example Walking Data Set</p>
+     </div>
+     <div>
+       <img src="/SleepAnalysis/restingExampleTimeDom.jpg?raw=true" alt="Example data in frequency domain" style="width:450px">
+      <p>Example Resting Data Set</p>
+      </div>
+</div>
+
+<div class="w3-container">
+<hr>
 
 <hr>
 <div class="w3-center">
