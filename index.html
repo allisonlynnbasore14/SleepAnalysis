@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-teal.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
 <body>
 
@@ -23,7 +23,7 @@
   <div class="w3-center"><h4>&nbsp;</h4>
   <h1 class="w3-xxxlarge w3-animate-bottom">An App for Caregivers Who Care</h1>
     <div class="w3-padding-32">
-      <button class="w3-btn w3-xlarge w3-dark-grey w3-hover-light-grey" onclick="document.getElementById('id01').style.display='block'" style="font-weight:900;">Contact Us </button>
+      <a class="w3-button w3-black w3-large w3-hover-light-grey" onclick="document.getElementById('id01').style.display='block'" style="font-weight:900;">Contact Us </a>
     </div>
 </div>
 </header>
@@ -31,32 +31,41 @@
 <!-- Modal -->
 
 <div class="w3-padding w3-white w3-display-container">
-  <span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-topright"><i class="fa fa-remove"></i></span>
-  <h2>Overview</h2>
-  <p>For caregivers, knowing if their care recipient is safely in bed can be a challenge. Having an alert system in place if the patient gets out of bed could save someone from falling, wondering, or harming themselves. Using fisher linear discrimination, we used machine learning to create an algorithm for determining if a person is walking or resting. A patient wears their cellular device while they sleep and a caregiver receives an alert if the person starts walking. </p>
+  <header class="w3-container w3-black">
+    <h2>Overview </h2>
+</header>
+  <p>For caregivers, knowing if their care recipient is safely in bed can be a challenge. Having an alert system in place if the patient gets out of bed could save someone from falling, wondering, or harming themselves. Using fisher linear discrimination, we used machine learning to create an algorithm for determining if a person is walking or resting. A patient wears their cellular device on their thigh while they sleep and a caregiver receives a mobile alert if the person starts walking. </p>
 </div>
 
 <div class="w3-padding w3-white w3-display-container">
-  <span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-topright"><i class="fa fa-remove"></i></span>
-  <h2>User Group</h2>
+  <header class="w3-container w3-black">
+    <h2>User Group </h2>
+</header>
   <p>For caregivers looking to continue their care for care receivers when they cannot physically be there, this app would assist you in your care giving. We know that caring for a loved one or a patient can be difficult, especially when one is not directly there with them. This app allows access to a patient’s state remotely. This technology distinguishes between tossing and truing in bed from walking and would prevent false alarms. In the event that a patient got up from bed, a text or alarm would sound on a caregiver’s mobile device.</p>
+  <p>We understand that caring for somebody who has a high risk of putting themselves in danger can be a very stressful job. However, it is essential for a caregiver to still be able to take their own time to sleep and to not constantly monitor somebody else. This app allows you the freedom and the peace of going to bed with the capabilities of still being able to help if anything goes wrong.</p>
 </div>
 
 <div class="w3-padding w3-white w3-display-container">
-  <span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-topright"><i class="fa fa-remove"></i></span>
-  <h2>Our Technology</h2>
+  <header class="w3-container w3-black">
+    <h2>Our Technology </h2>
+</header>
   <p>The essence of our technology is to match input accelerometer data from a sensor the user is wearing to a trained set of data. We can tell if someone is walking or not if the input data matches the trained walking data or the resting data.
-	</p>
+  </p>
   
-  <p>For all the data, trained and imputed, we used several mechanisms for cleaning the signal. We first put the data through a strict low pass filter with a cut off frequency of 8/pi.
+  <p>For all the data, trained and inputed, we used several mechanisms for cleaning the signal. We first put the data through a strict low pass filter with a cut off frequency of 8/pi.
 	Then, we use a loose high pass filter with a cut off frequency at pi/500 to get rid of the extremely low frequencies. The filtering got rid of outliers and normalized our data to be more similar.
 	</p> 
   
 <p>
 After filtering, we took the time component out of our data by putting it into the frequency domain. This is possible with the Fast Fourier Transform (FFT). The first image shows an example reading in the time domain. The second image shows the same reading in the frequency domain.
-We made a trained set of data using fisher linear discrimination. This included INSERT ABOUT EIGENS AND SUCH.
-With a set of trained data we were able to input data from a user's phone and find which of our training data sets most correlates to the input.
-</p>
+We made a trained set of data using fisher linear discrimination.</p>
+<p>Our processed data was comprised of both still and walking data, each in vector format. So first, we found the covariance matrix of our data. This involved minding the mean of eah individual data set and then subtracted from each data point.</p>
+<p>Then the eigenvectors were found (a special set of vectors associated with a linear system of equations) of the covariance matrix. When eigenvectors of a covariance matrix are found, this represents the 'direction' of the data set. This process can be done through Singular Value Decomposition (SVD). SVD is a process of decomposing a matrix M into a set of eigenvectors and eigenvalues (ordered from largest to smallest). </p>
+<p>Principle Component Analysis (PCA) is done in order to choose the largest eigenvectors (the more significant one) and return the data set. Although in this case, our training data was small - it was still more robust to shorten the eigenvector data set.</p>
+<p>Then Linear Discriminant Analysis (LDA) is performed on the data. LDA is a way of getting the discrimination of the data in order to make a data set easier to classify. This method selects two classes: between-class (in our case, between walking and not walking) and within-class scatter. LDA then compares the ratio between the two classes.</p>
+<p>The maximum value of the ratio of projected between-class and projected within-class is calculated to find the optimal weight.</p>
+<p>This weight is projected into the LDA subspace. When compared to a data set, the minimal projection between the data and the train data is computed. In this case, a data set would be compared to two 'clouds' essentially - 'walking' and 'not walking'.</p>
+<p>With a set of trained data we were able to input data from a user's phone and find which of our training data sets most correlates to the input. </p>
 	
  
 </div>
@@ -76,7 +85,7 @@ With a set of trained data we were able to input data from a user's phone and fi
       <footer class="w3-container w3-theme-l1">
         <p>Modal footer</p>
       </footer>
-    </div>
+  </div>
 </div>
 
 	  
@@ -97,14 +106,14 @@ With a set of trained data we were able to input data from a user's phone and fi
 </div>
 
 <div class="w3-padding w3-white w3-display-container">
-  <span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-topright"><i class="fa fa-remove"></i></span>
   <p> We made a trained set of data using fisher linear discrimination. This included INSERT ABOUT EIGENS AND SUCH. </p>
   
   <p> With a set of trained data we were able to input data from a user's phone and find which of our training data sets most correrlates to the input. </p>
   
   <div class="w3-padding w3-white w3-display-container">
-  <span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-topright"><i class="fa fa-remove"></i></span>
-  <h2>Our Data</h2>
+    <header class="w3-container w3-black">
+      <h2>Our Data</h2>
+</header>
   <p> Our training data came from 12 tests. Six of the tests were purely walking. The other six were resting. "Resting" data consists of one of us attaching a phone with an accelerometer to our upper leg, laying down, and moving our legs as if we were sleeping. Based on personal experience, we knew that typical sleep movements were turning side to side, bending knee up or down, and slight lateral transitions. With the walking test, we also attached a phone to our upper leg and walked around at a steady pace. We chose the upper leg as the measurement point to optimize stillness while sleeping and maximize movement while walking. The arms or lower legs are more commonly moved during sleep. Additionally the comfort of the user needed to be considered with the position of the sensor. The upper leg was relatively unobtrusive compared the neck which would be tremendously uncomfortable. Additionally, we took numerous other data sets for testing of our algorithm. These tests were a mixture of heavy tossing, light tossing, heavy walking, and light walking. With the use of the Matlab Mobile app, we were able to relieve accelerometer data real time from our phones. This meant we could easily monitor users while they are sleeping. While this was not used in our final code and testing, using mobile would be an obvious next step to packaging the product.</p>
   
   
@@ -115,12 +124,13 @@ With a set of trained data we were able to input data from a user's phone and fi
 
 <div class="w3-padding w3-white w3-display-container">
 	<div>
-		  <span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-topright"><i class="fa fa-remove"></i></span>
-		  <h2>Motion Detection</h2>
+	  <header class="w3-container w3-black">
+	    <h2>Motion Detection </h2>
+</header>
 		  <p>
 Accelerometer data allows us to track the acceleration of a user in the x, y, and z axis. Using a series of these vectors, we can determine the motion of the user (Ex: moves forward then turns left). Additional information about the user original relation to a set room point allows us to determine a path made the user in the room frame. The following image is example accelerometer data in the y axes (top to bottom) taken using a phone. The graph shows that the acceleration is based around 9.8, which makes sense with gravity. As the user’s leg moves up and down from walking, acceleration spikes and plummets when the leg comes to a stop with each step. The second graph here shows user acceleration in the y axis while the person is resting and only slightly tossing and turning. Here the phone’s y axis is laying horizontally across the person’s leg so the data is centered at about 0. Toward the beginning the data drops to be around -1. This is due to the user slightly lifting their leg to not be horizontal. At the end, the user is truing their leg side to side and upwards slightly.
 		</p>
-	</div>
+  </div>
 
 </div>
 
@@ -128,11 +138,11 @@ Accelerometer data allows us to track the acceleration of a user in the x, y, an
 	<div>
      <img src="/SleepAnalysis/TimeReadinginY.jpg?raw=true" alt="Example data in frequency domain" style="width:500px">
       <p style="margin-left: 150px">Example Walking Data Set</p>
-     </div>
+  </div>
      <div>
        <img src="/SleepAnalysis/restingExampleTimeDom.jpg?raw=true" alt="Example data in frequency domain" style="width:500px">
       <p style="margin-left: 150px">Example Resting Data Set</p>
-      </div>
+  </div>
 	<div>
 		<img src="/SleepAnalysis/phonecord.png?raw=true" alt="Example data in frequency domain" style="width:250px">
 	</div>
@@ -149,7 +159,7 @@ Accelerometer data allows us to track the acceleration of a user in the x, y, an
 
 </div>   
 
-<header class="w3-container w3-blue-grey">
+<header class="w3-container w3-black">
   <h2>Header</h2>
 </header>
 
@@ -343,7 +353,7 @@ Accelerometer data allows us to track the acceleration of a user in the x, y, an
 <h2 class="w3-center">Buttons</h2>
 <div class="w3-center">
   <br>
-  <a class="w3-button w3-theme">Button</a>
+  <a class="w3-button ">Button</a>
   <a class="w3-button w3-theme">Button</a>
   <a class="w3-button w3-theme-d3 w3-disabled">Button</a>
   <br><br>
